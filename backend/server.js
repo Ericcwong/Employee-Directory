@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const apiRouting = require("./routes/apiRouting");
 require("dotenv").config();
 
 //Express server
@@ -26,6 +27,7 @@ connection.once("open", () => {
     console.log("Connection to MongoDB was successful!")
 })
 
+app.use("/", apiRouting);
 
 //Starts the server
 app.listen(PORT, () =>{
