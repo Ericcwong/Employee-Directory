@@ -15,10 +15,16 @@ app.use(cors());
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 
-mongoose.connect("mongodb://ericcwong:password1@ds263847.mlab.com:63847/heroku_cr5n4dh4", {
+const uri = process.env.ATLAS_URI;
+mongoose.connect(uri, {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useCreateIndex: true
 });
+const connection = mongoose.connection;
+connection.once("open", () => {
+    console.log("Connection to MongoDB was successful!")
+})
 
 
 //Starts the server
