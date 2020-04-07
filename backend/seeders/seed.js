@@ -10,7 +10,7 @@ mongoose.connect("mongodb://ericcwong:password1@ds263847.mlab.com:63847/heroku_c
 
 let employeeSeed = [
   {
-    day: new Date().setDate(new Date().getDate()-10),
+    day: new Date().setDate(new Date().getDate()),
     employee: [
       {
         firstName: "Eric",
@@ -21,7 +21,7 @@ let employeeSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-10),
+    day: new Date().setDate(new Date().getDate()),
     employee: [
       {
         firstName: "Elizabeth",
@@ -32,7 +32,7 @@ let employeeSeed = [
     ]
   },
   {
-    day: new Date().setDate(new Date().getDate()-10),
+    day: new Date().setDate(new Date().getDate()),
     employee: [
       {
         firstName: "Billy",
@@ -42,7 +42,7 @@ let employeeSeed = [
       }
     ]
   },  {
-    day: new Date().setDate(new Date().getDate()-10),
+    day: new Date().setDate(new Date().getDate()),
     employee: [
       {
         firstName: "Apu",
