@@ -14,7 +14,10 @@ router.route("/api/employees").post((req,res) => {
     const position = req.body.position;
 
     const employee = new Employee({
-        employee: [{        firstName,
+        employee: [{        
+            
+            
+            firstName,
             lastName,
             email,
             position}]
