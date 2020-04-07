@@ -14,14 +14,14 @@ router.route("/api/employees").post((req,res) => {
     const position = req.body.position;
 
     const employee = new Employee({
-        employee: [{        
-            
-            
-            firstName,
-            lastName,
-            email,
-            position}]
-
+        employee: [
+            {         
+                firstName,
+                lastName,
+                email,
+                position
+            }
+        ]
     });
     employee.save()
         .then(()=> res.json("Employee added!"))
