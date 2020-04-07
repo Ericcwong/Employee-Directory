@@ -14,6 +14,7 @@ router.route("/api/employees").post((req,res) => {
     const position = req.body.position;
 
     const employee = new Employee({
+        day:{type: Date, default: Date.now},
         employee: [
             {         
                 firstName,
