@@ -3,23 +3,22 @@ const Employee = require("../models/employee.models");
 
 //Creates an Employee (Create)
 router.route("/api/employees").post((req,res) => {
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const email = req.body.email;
-    const position = req.body.position;
+    let firstName = req.body.firstName;
+    let lastName = req.body.lastName;
+    let email = req.body.email;
+    let position = req.body.position;
 
-    const Employee = new Employee({
-        day:{type: Date, default: Date.now},
-        employee: [
+    let newEmployee = new Employee({
+        employee: 
             {         
                 firstName,
                 lastName,
                 email,
                 position
             }
-        ]
+        
     });
-    Employee.save()
+    newEmployee.save()
         .then(()=> res.json("Employee added!"))
         .catch(err => res.status(400).json(`Error: ${err}`));
 });

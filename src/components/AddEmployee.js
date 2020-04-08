@@ -1,43 +1,20 @@
 import React, { Component } from 'react'
-
+import axios from "axios";
 export default class AddEmployee extends Component {
     // Setting the component's initial state
     constructor(props){
         super(props)
-
- 
-
         this.state = {
-            employee:[
+            employee:
               {
                   firstName: "",
                   lastName: "",
                   email: "",
                   position: ""
               }
-            ]
+            
           };
     }
-    // onChangeEmployeeFirstName(e){
-    //     this.setState({
-    //         firstName: e.target.value
-    //     })
-    // }
-    // onChangeEmployeeLastName(e){
-    //     this.setState({
-    //         lastName: e.target.value
-    //     })
-    // }
-    // onChangeEmployeeEmail(e){
-    //     this.setState({
-    //         email: e.target.value
-    //     })
-    // }
-    // onChangeEmployeePosition(e){
-    //     this.setState({
-    //         position: e.target.value
-    //     })
-    // }
 
     handleInputChange = event => {
         let value = event.target.value;
@@ -58,13 +35,16 @@ export default class AddEmployee extends Component {
         }else{
             alert("Employee added!")
         }
-        const employee = [{
+        const employee = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email,
             position: this.state.position
-          }];
+          };
         console.log(employee);
+
+        axios.post("http://localhost:9000/api/employees", employee)
+          .then(res => console.log(res.data));
 
     }
     render(){

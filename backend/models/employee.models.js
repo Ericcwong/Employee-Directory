@@ -11,8 +11,7 @@ const validateEmail = function(email) {
 const Schema = mongoose.Schema;
 
 const employeeSchema = new Schema({
-    day:{type: Date, default: Date.now},
-    employee: [{
+    employee: {
         firstName:{
             type: String,
             required: true
@@ -34,7 +33,7 @@ const employeeSchema = new Schema({
             type: String,
             required: true
         },
-    }]
+    }
 });
 
 const Employee = mongoose.model("employee", employeeSchema);
