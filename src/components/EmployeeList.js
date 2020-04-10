@@ -4,10 +4,10 @@ import axios from "axios";
 const Employee = props =>  (
     
     <tr>
-        <td>{props.employee.employee.firstName}</td>
-        <td>{props.employee.employee.lastName}</td>
-        <td>{props.employee.employee.email}</td>
-        <td>{props.employee.employee.position}</td>
+        <td>{props.employees.employee.firstName}</td>
+        <td>{props.employees.employee.lastName}</td>
+        <td>{props.employees.employee.email}</td>
+        <td>{props.employees.employee.position}</td>
     </tr>
 )
  
@@ -45,20 +45,26 @@ updateSearch(event){
     employeeList(){
         let filteredEmployee = this.state.employees.filter(
             (employee) => {
-                return employee.employee.firstName.indexOf(this.state.search) !== -1;
+                return employee.employee.firstName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+                 || employee.employee.lastName.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+                 || employee.employee.email.toLowerCase().indexOf(this.state.search.toLowerCase()) !==-1
+                 || employee.employee.position.toLowerCase().indexOf(this.state.search.toLowerCase()) !==-1;
             }
         )
         return filteredEmployee.map(employee => {
-            return <Employee employee={employee} removeEmployee={this.removeEmployee} key={Employee._id}/>;
+            return <Employee employees={employee} removeEmployee={this.removeEmployee} key={Employee._id}/>;
         })
     }
     render(){
         return (
             <div>
-                <h3>Employees</h3>
+                <h3 style={{textAlign:"center"}}>Employees</h3>
+                <br></br>
+                <p>Search Employees by First or Last Name, Email, or Position</p>
                 <input type="text"
                     value={this.state.search}
-                    onChange={this.updateSearch.bind(this)}/>
+                    onChange={this.updateSearch.bind(this)}
+                    placeholder="Enter here!"/>
                 <table className="table">
                     <tr>
                         <th>First Name</th>

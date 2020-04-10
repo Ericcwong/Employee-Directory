@@ -50,6 +50,7 @@ export default class AddEmployee extends Component {
     render(){
         return (
             <div>
+                <h4>Add an Employee</h4>
                 <form className="form">
                     <input
                         value={this.state.firstName}
