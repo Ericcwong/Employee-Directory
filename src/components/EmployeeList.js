@@ -14,11 +14,17 @@ const Employee = props =>  (
 
 export default class EmployeeList extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {employees: []};
+    constructor(){
+        super();
+        this.state = {
+            employees: [],
+            search: ""
+        }
     }
-
+updateSearch(event){
+    this.setState({search: event.target.value})
+    console.log(event.target.value)
+}
     componentDidMount(){
         axios.get("http://localhost:9000/api/employees/")
             .then(res => {
@@ -37,14 +43,22 @@ export default class EmployeeList extends Component {
         })
     }
     employeeList(){
-        return this.state.employees.map(Newemployee => {
-            return <Employee employee={Newemployee} removeEmployee={this.removeEmployee} key={Employee._id}/>;
+        let filteredEmployee = this.state.employees.filter(
+            (employee) => {
+                return employee.employee.firstName.indexOf(this.state.search) !== -1;
+            }
+        )
+        return filteredEmployee.map(employee => {
+            return <Employee employee={employee} removeEmployee={this.removeEmployee} key={Employee._id}/>;
         })
     }
     render(){
         return (
             <div>
                 <h3>Employees</h3>
+                <input type="text"
+                    value={this.state.search}
+                    onChange={this.updateSearch.bind(this)}/>
                 <table className="table">
                     <tr>
                         <th>First Name</th>
