@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Employee Directory
 
-## Available Scripts
+# Disclaimer
+This application was the first MERN (MongoDB, Express, React, NodeJS) application i've created. The application has numerous bugs and incompleted functionalities. <br>
+Some being the delete function for removing employees, have the drop box for select to show the proper roles or employees,properly connecting the backend to the front end, and overall the React side clarification (being wording and making things more DRY).
 
-In the project directory, you can run:
+<a href = "https://github.com/Ericcwong/Employee-Directory"><img src ="readMe/images/githubLogo.png"> Github</a> Link <br><br>
+<img src = "readMe/images/herokuLogo.png"> Currently unavailable
 
-### `npm start`
+# Purpose
+Employee Directory is an application that allows the manager manage their staff. You are able to add new staff to the current roaster and or find quick information about current employees.
+<img src = "readMe/images/home.png">
+<img src = "readMe/images/employee-directory.gif">
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Application's Software and languages
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<ul>
+<li>MongoDB</li>
+<li>Express</li>
+<li>React</li>
+<li>NodeJs</li>
+<li>PostMan</li> with figuring out api routing
+</ul>
 
-### `npm test`
+# Improvements for future developements
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Learning React would of been the first step. I thought I had the grasp of it enought to combine the application with the backend. I was wrong, I need to spend more time with just placing and setting the state. That would of made this whole process of coding this application far easier. I wish I could of spent mroe time onto this project to polish out the sharp corners and imperfections.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Resources
+<a href ="https://www.youtube.com/watch?v=7CqJlxBYj-M&t=1287s" >Youtube video: FreecodeCamp.org</a> I followed their tutorial to get the feel and understanding of a MERN stack. I was able to learn how to connect the backend and the frontend with axios.
+<br><br>
+I also watch a handful of other videos and stackoverflow articles to figure out some bugs.
