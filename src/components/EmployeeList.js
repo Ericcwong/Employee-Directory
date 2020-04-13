@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import axios from "axios";
-import Select from "react-select";
+// import Select from "react-select";
 
 const Employee = props =>  (
     
@@ -9,7 +9,7 @@ const Employee = props =>  (
         <td>{props.employees.employee.lastName}</td>
         <td>{props.employees.employee.email}</td>
         <td>{props.employees.employee.position}</td>
-        <td><a href="#" onClick={() => {props.removeEmployee(props.employees._id)}}>Delete</a></td>
+        <td><a href="youtube.com" onClick={() => {props.removeEmployee(props.employees._id)}}>Delete</a></td>
     </tr>
 )
  
@@ -34,8 +34,8 @@ updateSearch(event){
     componentDidMount(){
         axios.get("http://localhost:9000/api/employees/")
             .then(res => {
-                this.setState({employees: res.data}) && this.setState({select: res.data})
-                console.log(res.data)
+                this.setState({employees: res.data}) 
+
             })
             .catch((error)=> {
                 console.log(error)
@@ -75,7 +75,7 @@ updateSearch(event){
                     value={this.state.search}
                     onChange={this.updateSearch.bind(this)}
                     placeholder="Enter here!"/>
-                <Select options={this.state.select.employee}/>
+                {/* <Select options={this.state.select.employee}/> */}
                 <table className="table">
                     <tr>
                         <th>First Name</th>
