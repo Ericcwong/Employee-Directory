@@ -1,5 +1,6 @@
-import React,{Component} from 'react'
+import React,{Component} from "react";
 import axios from "axios";
+import Select from "react-select";
 
 const Employee = props =>  (
     
@@ -8,6 +9,7 @@ const Employee = props =>  (
         <td>{props.employees.employee.lastName}</td>
         <td>{props.employees.employee.email}</td>
         <td>{props.employees.employee.position}</td>
+        <td><a href="#" onClick={() => {props.removeEmployee(props.employees._id)}}>Delete</a></td>
     </tr>
 )
  
@@ -18,18 +20,22 @@ export default class EmployeeList extends Component {
         super();
         this.state = {
             employees: [],
-            search: ""
+            search: "",
+            select: []
         }
+    
     }
+
 updateSearch(event){
+    event.preventDefault();
     this.setState({search: event.target.value})
     console.log(event.target.value)
 }
     componentDidMount(){
         axios.get("http://localhost:9000/api/employees/")
             .then(res => {
-                this.setState({employees: res.data})
-                console.log(res)
+                this.setState({employees: res.data}) && this.setState({select: res.data})
+                console.log(res.data)
             })
             .catch((error)=> {
                 console.log(error)
@@ -39,9 +45,13 @@ updateSearch(event){
         axios.delete("/api/employees/" + id)
         .then(res => console.log(res.data));
         this.setState({
-            employee: this.state.employees.filter(el => el._id !== id)
+            employees: this.state.employees.filter((_id) => _id !== id)
         })
     }
+    // const selectOptions = (option,rawInput) => {
+    //     const words = rawInput.split(" ");
+
+    // }
     employeeList(){
         let filteredEmployee = this.state.employees.filter(
             (employee) => {
@@ -65,6 +75,7 @@ updateSearch(event){
                     value={this.state.search}
                     onChange={this.updateSearch.bind(this)}
                     placeholder="Enter here!"/>
+                <Select options={this.state.select.employee}/>
                 <table className="table">
                     <tr>
                         <th>First Name</th>
