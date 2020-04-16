@@ -29,4 +29,4 @@ Learning React would of been the first step. I thought I had the grasp of it eno
 # Resources
 <a href ="https://www.youtube.com/watch?v=7CqJlxBYj-M&t=1287s" >Youtube video: FreecodeCamp.org</a> I followed their tutorial to get the feel and understanding of a MERN stack. I was able to learn how to connect the backend and the frontend with axios.
 <br><br>
-I also watch a handful of other videos and stackoverflow articles to figure out some bugs.
+I also watch a handful of other videos and stackoverflow articles to figure out some bugs.# Employee-Directory2.0
