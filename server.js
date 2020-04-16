@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === "production") {
 app.use("/", apiRouting);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://ericcwong:password1@ds137488.mlab.com:37488/heroku_0kfclxf8",
 {
+  useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
 },
