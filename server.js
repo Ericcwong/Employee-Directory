@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://ericcwong:password1@ds263847.mlab.com:63847/heroku_cr5n4dh4");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://ericcwong:password1@ds137488.mlab.com:37488/heroku_0kfclxf8");
 
 
 app.use("/", apiRouting);
