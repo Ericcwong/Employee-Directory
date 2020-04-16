@@ -18,11 +18,15 @@ app.use(morgan("short"));
 app.use(cors());
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
-
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+app.use("/", apiRouting);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://ericcwong:password1@ds137488.mlab.com:37488/heroku_0kfclxf8");
 
 
-app.use("/", apiRouting);
+
 
 //Starts the server
 app.listen(PORT, () =>{
