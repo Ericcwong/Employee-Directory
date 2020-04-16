@@ -19,21 +19,9 @@ app.use(cors());
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
-  useUnifiedTopology: true 
-});
-const connection = mongoose.connection;
-connection.once("open", () => {
-    console.log("Connection to MongoDB was successful!")
-})
+mongoose.connect(process.env.MONGODB_URI || "mongodb://ericcwong:password1@ds263847.mlab.com:63847/heroku_cr5n4dh4");
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "../public/index.html"));
-// });
+
 app.use("/", apiRouting);
 
 //Starts the server
