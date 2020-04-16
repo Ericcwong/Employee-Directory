@@ -10,6 +10,7 @@ require("dotenv").config();
 //Express server
 const app = express();
 const PORT = process.env.PORT || 9000;
+// Serve up static assets (usually on heroku)
 
 // const publicPath = path.join(__dirname, "../public")
 
@@ -18,7 +19,9 @@ app.use(morgan("short"));
 app.use(cors());
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname,"public")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
